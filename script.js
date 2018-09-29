@@ -6,7 +6,7 @@ function check() {
     let login = form.login.value;
     if (login == "") {
         form.logError.style.visibility = "visible"
-        form.logError.title = "Поле логина должно быть заполнено"
+        form.logError.title = "Это поле обязательно"
         isRight = false;
     } else {
         form.logError.style.visibility = "hidden";
@@ -17,7 +17,7 @@ function check() {
     
     if (email == "") {
         form.emError.style.visibility = "visible";
-        form.emError.title = "Поле почты должно быть заполнено";
+        form.emError.title = "Это поле обязательно";
         isRight = false;
     } else if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(email)) {
         form.emError.style.visibility = "visible";
@@ -30,7 +30,7 @@ function check() {
     let password1 = form.password1.value;    
     if (password1 == "") {
         form.pasError.style.visibility = "visible";
-        form.pasError.title = "Поле пароля должно быть заполнено";
+        form.pasError.title = "Это поле обязательно";
         isRight = false;   
     } else {
         let pasError = "";
@@ -55,7 +55,7 @@ function check() {
     let password2 = form.password2.value;
     if (password2 == "") {
         form.pasEqError.style.visibility = "visible";
-        form.pasEqError.title = "Поле пароля должно быть заполнено";
+        form.pasEqError.title = "Это поле обязательно";
         isRight = false;   
     } else if (password1 != password2) {
         form.pasEqError.style.visibility = "visible";
