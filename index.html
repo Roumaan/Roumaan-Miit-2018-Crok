@@ -1,17 +1,21 @@
 <html>
-    <header>
+    <head>
         <title>Registration</title>
         <link rel="stylesheet" href="style.css">
         <script src="registration.js"></script>
-    </header>
+    </head>
     <body>
-        <h1>Регистрация</h1>
-        <form id="registration" onsubmit="registration()">
-            <input>
-            <input type="email">
-            <input type="password">
-            <input type="password">
-            <input type="submit">
+        <h1><sup>Регистрация</sup></h1>
+        <form onsubmit="registration()">
+            Введите имя<br>
+            <input><br>
+            Введите email<br>
+            <input type="text" type="email" size="20" maxlength="50" value=""><br>
+            Введите пароль<br>
+            <input type="password"><br>
+            Повторите пароль <br>
+            <input type="password"><br>
+            <button type="submit">Отправить</button>
         </form>
     </body>
 </html>
