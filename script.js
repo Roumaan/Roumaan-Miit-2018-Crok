@@ -8,27 +8,30 @@ function registration() {
     //email section
     let email = form.elements[1].value
     
+    if (!/(?=.*[@])(?=.*[.])/g) {
+        
+    }
+    
     
     //password section
     let password1 = form.elements[2].value;
     let password2 = form.elements[2].value;
-    var regularExpression = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,50}/g;
     
-    let error = "";
-    if (!/[0-9a-zA-Z]{8,50}/g.test(password))
-        error=error+"-Пароль должен быть больше 8 символов и меньше 50";
-    if (!/(?=.*[0-9])/g.test(password))
-        error=error+"\n-Содержать хотя бы одну цифру";
-    if (!/(?=.*[a-z])/g.test(password))
-        error=error+"\n-Одну латинскую букву в нижнем регистер";
-    if (!/(?=.*[A-Z])/g.test(password))
-        error=error+"\n-Одну латинскую букву в верхнем регистре";
-    if (password != password2) {
-        error+"\n-Пароли должны совпадать"
+    let pasError = "";
+    if (!/[0-9a-zA-Z]{8,50}/g.test(password1))
+        pasError+="-Пароль должен быть больше 8 символов и меньше 50";
+    if (!/(?=.*[0-9])/g.test(password1))
+        pasError+="\n-Содержать хотя бы одну цифру";
+    if (!/(?=.*[a-z])/g.test(password1))
+        pasError+="\n-Одну латинскую букву в нижнем регистер";
+    if (!/(?=.*[A-Z])/g.test(password1))
+        pasError+="\n-Одну латинскую букву в верхнем регистре";
+    if (password1 != password2) {
+        pasError+="\n-Пароли должны совпадать"
     }
     
-    if (error != '') {
-        alert(error)
+    if (pasError != '') {
+        alert(pasError)
         return false
     }
 
