@@ -25,16 +25,19 @@ function pasChange() {
     if (!/(?=.*[0-9])/g.test(password1))
         pasError+="\n-Пароль должен cодержать хотя бы одну цифру";
     if (!/(?=.*[a-z])/g.test(password1))
-        pasError+="\n-Пароль должен cодержать хотя бы одну латинскую букву в нижнем регистер";
+        pasError+="\n-Пароль должен cодержать хотя бы одну латинскую букву в нижнем регистре";
     if (!/(?=.*[A-Z])/g.test(password1))
         pasError+="\n-Пароль должен cодержать хотя бы одну латинскую букву в верхнем регистре";
     
     if (pasError != '') {
         form.pasError.style.visibility = "visible";
+        form.pasError.title = pasError;
         return false;
-    } else
+    } else {
         form.pasError.style.visibility = "hidden";
-    form.pasError.title = pasError;
+        form.pasError.title = pasError;
+    }
+    
     
     if (password1 != password2) {
         form.pasEqError.style.visibility = "visible";
