@@ -1,21 +1,23 @@
-function registration() {
-    'use strict';
+let form = document.forms[0];  
+
+function emChange() {
+    let email = form.email.value;
     
-    let form = document.forms[0];
-    
-    let login = form.elements[0].value;
-    
-    //email section
-    let email = form.elements[1].value
-    
-    if (!/(?=.*[@])(?=.*[.])/g) {
-        
+    if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(email)) {
+        form.emError.style.visibility = "visible";
+        form.emError.title = "-Адрес должен быть вида example@example.com";
+        return false;
+    } else {
+        form.emError.style.visibility = "hidden";
+        form.emError.title="";
     }
     
-    
-    //password section
-    let password1 = form.elements[2].value;
-    let password2 = form.elements[3].value;
+    return true;
+}
+
+function pasChange() {
+    let password1 = form.password1.value;
+    let password2 = form.password2.value;
     
     let pasError = "";
     if (!/[0-9a-zA-Z]{8,50}/g.test(password1))
@@ -23,28 +25,44 @@ function registration() {
     if (!/(?=.*[0-9])/g.test(password1))
         pasError+="\n-Содержать хотя бы одну цифру";
     if (!/(?=.*[a-z])/g.test(password1))
-        pasError+="\n-Содержать хотя бы одну латинскую букву в нижнем регистер";
+        pasError+="\n-Содержать хотя бы одну латинскую букву в нижнем регистре";
     if (!/(?=.*[A-Z])/g.test(password1))
         pasError+="\n-Содержать хотя бы одну латинскую букву в верхнем регистре";
-    if (password1 != password2) {
-        pasError+="\n-Пароли должны совпадать"
-    }
     
     if (pasError != '') {
-        alert(pasError)
-        return false
-    }
-
-    let salt = MD5(Math.random(5000)+"");
-    password = MD5(password+salt) + salt;
-   
+        form.pasError.style.visibility = "visible";
+        return false;
+    } else
+        form.pasError.style.visibility = "hidden";
+    form.pasError.title = pasError;
     
-        
-    window.alert(login + " " +
-        email + " " +
-        password + " " +
-        password2);
-    return true;
+    if (password1 != password2) {
+        form.pasEqError.style.visibility = "visible";
+        form.pasEqError.title="-Пароли должны совпадать";
+        return false;
+    } else {
+        form.pasEqError.style.visibility = "hidden";
+        form.pasEqError.title="";
+    }
+    
+    return true
 }
 
-//-Пароль должен быть больше 8 символов и меньше 50 \n-Содержать хотя бы одну цифру \n-Одну латинскую букву в нижнем регистер \n-Одну латинскую букву в верхнем регистре
+function check() {
+    return emChange() && pasChange();
+}
+
+function registration() {
+    if (check()) {
+        let login = form.login.value;
+        let email = form.email.value;
+        let password1 = form.password1.value;
+        let password2 = form.password2.value;
+
+        let salt = MD5(Math.random(5000)+"");
+        password1 = MD5(password+salt) + salt;
+        return true;
+    }
+    
+    return false;
+}

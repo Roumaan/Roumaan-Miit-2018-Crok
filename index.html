@@ -4,20 +4,30 @@
         <link rel="stylesheet" href="style.css">
           <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
         <script src="md5.js"></script>
-        <script src="script.js"></script>
+        
     </head>
     <body>
+        
         <h1><sup>Регистрация</sup></h1>
         <form onsubmit="registration()">
             Введите имя<br>
-            <input><br>
+            <input tabindex="1" id="login"><br>
+            
             Введите email<br>
-            <input type="text" type="email" size="20" maxlength="50" value=""><br>
+            <input tabindex="2" id="email" type="email" onblur="emChange()">
+            <button disabled id="emError" type="button" style="visibility: hidden">!</button><br>
+            
             Введите пароль<br>
-            <input type="password"><br>
+            <input tabindex="3" id="password1" type="password" onblur="pasChange()">
+            <button disabled id="pasError" type="button" style="visibility: hidden">!</button><br>
+            
             Повторите пароль <br>
-            <input type="password"><br>
-            <button type="submit">Отправить</button>
+            <input tabindex="4" id="password2" type="password" onblur="pasChange()">
+            <button disabled id="pasEqError" type="button" style="visibility: hidden">!</button><br>
+            
+            <button tabindex="5" type="submit">Отправить</button>
         </form>
+        
+        <script src="script.js"></script>
     </body>
 </html>
