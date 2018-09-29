@@ -15,7 +15,7 @@ function registration() {
     
     //password section
     let password1 = form.elements[2].value;
-    let password2 = form.elements[2].value;
+    let password2 = form.elements[3].value;
     
     let pasError = "";
     if (!/[0-9a-zA-Z]{8,50}/g.test(password1))
@@ -23,9 +23,9 @@ function registration() {
     if (!/(?=.*[0-9])/g.test(password1))
         pasError+="\n-Содержать хотя бы одну цифру";
     if (!/(?=.*[a-z])/g.test(password1))
-        pasError+="\n-Одну латинскую букву в нижнем регистер";
+        pasError+="\n-Содержать хотя бы одну латинскую букву в нижнем регистер";
     if (!/(?=.*[A-Z])/g.test(password1))
-        pasError+="\n-Одну латинскую букву в верхнем регистре";
+        pasError+="\n-Содержать хотя бы одну латинскую букву в верхнем регистре";
     if (password1 != password2) {
         pasError+="\n-Пароли должны совпадать"
     }
