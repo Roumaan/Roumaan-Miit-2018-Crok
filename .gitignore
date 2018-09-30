@@ -21,3 +21,6 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
+.vscode/launch.json
+.vscode/settings.json
+Server.py
