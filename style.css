@@ -1,6 +1,5 @@
 h1 { font-family: "Arial" ; font-style: normal ; font-weight: 500 }
-body {font-family: 'Ubuntu Condensed'; text-align: center }
- body {
+body {font-family: 'Ubuntu Condensed'; text-align: center;
     background: #bcdefc; /* Цвет фона */
     color: rgb(0, 0, 0); /* Цвет текста */
    }
