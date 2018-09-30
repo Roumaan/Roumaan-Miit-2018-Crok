@@ -1,11 +1,16 @@
+h1 {
+    font-family: "Roboto" ; font-style: normal ; font-weight: 500
+}
 .progress {
-    width: 50%
+    width: 50%;
+    margin-left: 200px;
+        
 }
 
 .back{
    height: 20px;
     width: 100%;
-   background-color:lightgrey;
+   background-color: lightgrey;
     border-radius: 10px;
    border:1px solid; 
 }
@@ -14,10 +19,13 @@
     height: 20px;
     background-color: #036c03;
     border-right: solid black 3px;
-    border-radius: 10px
+    border-radius: 10px;
    
 }
-
 .percents {
     text-align: left;
+    
+}
+.buttons {
+    display: inline;
 }
