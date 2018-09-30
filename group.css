@@ -9,23 +9,5 @@ progress {
  height: 10px;
     width: 100mm;
  border-radius:18px;
-    }
-
-.back{
-   height: 20px;
-    width: 60%;
-   background-color:lightgrey;
 }
 
-.front {
-    height: 20px;
-    width: 50%;
-    background-color: darkgreen;
-    border-right: solid black 3px;
-   
-}
-
-.percents {
-    text-align: left;
-    margin-left: calc(30% - 7px)
-}

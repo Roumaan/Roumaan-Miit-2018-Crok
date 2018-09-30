@@ -1,0 +1,23 @@
+.progress {
+    width: 50%
+}
+
+.back{
+   height: 20px;
+    width: 100%;
+   background-color:lightgrey;
+    border-radius: 10px;
+   border:1px solid; 
+}
+
+.front {
+    height: 20px;
+    background-color: #036c03;
+    border-right: solid black 3px;
+    border-radius: 10px
+   
+}
+
+.percents {
+    text-align: left;
+}
