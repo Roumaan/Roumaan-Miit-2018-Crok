@@ -19,6 +19,6 @@ function conf_progr(obj, val) {
 
 let bars = document.getElementsByClassName('progress');
 for (let i = 0; i < bars.length; i++) {
-     conf_progr(bars[i], Math.random()*100);
+     conf_progr(bars[i], Math.random()*95);
 }
 

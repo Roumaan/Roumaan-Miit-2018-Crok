@@ -1,5 +1,7 @@
 body {
     font-family: 'Roboto Condensed', sans-serif;
+    background: #bcdefc;
+   
 }
 
 table { 
@@ -9,6 +11,8 @@ table {
     border-bottom-style: solid ;
     margin-left: 5%;
     width: 150mm ;
+     margin-left: 400px;
+   
 }
 caption {
 text-align: left;
